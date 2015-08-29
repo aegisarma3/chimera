@@ -6,14 +6,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         ShowTitleBar="true"
         Loaded="OnWindowLoaded"
-        Title="Catflap Setup" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Margin="1" BorderBrush="Gray" BorderThickness="0" WindowTransitionsEnabled="False">
+        Title="Setup do Chimera Server" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Margin="1" BorderBrush="Gray" BorderThickness="0" WindowTransitionsEnabled="False">
 
     <i:Interaction.Behaviors>
         <behaviours:BorderlessWindowBehavior EnableDWMDropShadow="True" />
     </i:Interaction.Behaviors>
 
     <Grid x:Name="gridSetupWindow">
-        <Button x:Name="btnGo" Style="{DynamicResource AccentedSquareButtonStyle}" Content="Make it go" Margin="279,422,10,10" Click="btnGo_Click" IsDefault="True" RenderTransformOrigin="0.48,0.44" FontSize="15" FontWeight="Normal" BorderThickness="1"/>
+        <Button x:Name="btnGo" Style="{DynamicResource AccentedSquareButtonStyle}" Content="Conectar" Margin="279,422,10,10" Click="btnGo_Click" IsDefault="True" RenderTransformOrigin="0.48,0.44" FontSize="15" FontWeight="Normal" BorderThickness="1"/>
         <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Margin="10,422,0,10" Width="264" Background="White" TextDecorations="{x:Null}" VerticalContentAlignment="Center" Foreground="Black" Text="" FontSize="18" MaxLines="1" TextChanged="txtUrl_TextChanged"/>
 
     </Grid>

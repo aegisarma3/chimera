@@ -6,7 +6,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         ShowTitleBar="true" 
-        Title="Catflap" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Background="White" WindowTransitionsEnabled="False" ShowIconOnTitleBar="False" BorderThickness="0">
+        Title="Chimera" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" Background="White" WindowTransitionsEnabled="False" ShowIconOnTitleBar="False" BorderThickness="0">
 
     <i:Interaction.Behaviors>
         <behaviours:BorderlessWindowBehavior EnableDWMDropShadow="True" />
@@ -54,10 +54,10 @@
         </Button>
 
 
-        <TextBlock x:Name="labelDownloadStatus" Margin="0,0,0,50" Text="{}{0} - {1}% of {2} at {3}/s" Padding="5,0" Panel.ZIndex="100" FontSize="10" Grid.ColumnSpan="2" TextAlignment="Center" Grid.Row="1" Height="17" VerticalAlignment="Bottom" >
+        <TextBlock x:Name="labelDownloadStatus" Margin="0,0,0,50" Text="{}{0} - {1}% de {2} a {3}/s" Padding="5,0" Panel.ZIndex="100" FontSize="10" Grid.ColumnSpan="2" TextAlignment="Center" Grid.Row="1" Height="17" VerticalAlignment="Bottom" >
         </TextBlock>
         <!--<ProgressBar x:Name="globalProgress" Height="3" BorderBrush="Black" Grid.ColumnSpan="2" BorderThickness="0" VerticalAlignment="Top" Background="#FF898989" />-->
-        <TextBlock x:Name="labelDLSize" Text="(to check)" Margin="10,0,10,64" VerticalAlignment="Bottom" RenderTransformOrigin="0.868,0.192" Height="30" TextAlignment="Center" Grid.ColumnSpan="2" FontSize="20" FontFamily="Segoe UI Light" Grid.Row="1">
+        <TextBlock x:Name="labelDLSize" Text="(para verificar)" Margin="10,0,10,64" VerticalAlignment="Bottom" RenderTransformOrigin="0.868,0.192" Height="30" TextAlignment="Center" Grid.ColumnSpan="2" FontSize="20" FontFamily="Segoe UI Light" Grid.Row="1">
         </TextBlock>
         <Button x:Name="btnCancel" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="91,0,0,4" Width="50" Click="btnCancel_Click" Panel.ZIndex="2" Height="50" VerticalAlignment="Bottom" BorderThickness="0" Background="White" Grid.Row="1">
             <Rectangle Width="20" Height="20">
