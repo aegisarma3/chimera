@@ -38,7 +38,7 @@ namespace Catflap
             ImageBrush myBrush = new ImageBrush();
             myBrush.Stretch = Stretch.Uniform;
             Image image = new Image();
-            image.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/bgimg.png"));
+            image.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/bgimg.jpg"));
             myBrush.ImageSource = image.Source;
             gridSetupWindow.Background = myBrush;
 
@@ -107,7 +107,7 @@ namespace Catflap
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "This doesn't look like a valid repository");
+                MessageBox.Show(ex.Message, "Isso não parece ser um repositório válido");
                 Console.WriteLine(ex.ToString());
                 return false;
             }

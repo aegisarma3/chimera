@@ -53,8 +53,8 @@ namespace Catflap
 
         private void ReportException(Exception e)
         {
-            ExceptionMessageBox window = new ExceptionMessageBox(e, "A exception has occurred. This is a BUG! Pretty please report it, " +
-                "so that it can be fixed. Just press 'copy to clipboard' and send it to n@e-ix.net or post it on the GitHub issue tracker.");
+            ExceptionMessageBox window = new ExceptionMessageBox(e, "Um erro ocorreu. Isso é um BUG! Por favor, avise" +
+                "para que isso possa ser arrumado. Pressione 'Copiar' e poste no GitHub issue tracker.");
             window.ShowDialog();
         }
 

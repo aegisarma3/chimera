@@ -238,10 +238,10 @@
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\bgimg.png" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utils.cs" />
+    <Resource Include="Resources\bgimg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

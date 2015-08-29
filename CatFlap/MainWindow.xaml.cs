@@ -101,18 +101,18 @@ namespace Catflap
             {
                 if (repository.LatestManifest.runAction == null)
                 {
-                    btnRun.Content = "nothing to do";
+                    btnRun.Content = "Nada a fazer ;)";
                     wantEnabled = false;
                 }
                 else
                 {
-                    btnRun.Content = "run";
+                    btnRun.Content = "Abrir";
                     wantEnabled = true;
                 }
             }
             else
             {
-                btnRun.Content = "sync";
+                btnRun.Content = "Sincronizar";
                 wantEnabled = true;
             }
 
@@ -164,7 +164,7 @@ namespace Catflap
 
             this.Dispatcher.Invoke(() =>
             {
-                var title = repository.LatestManifest != null && repository.LatestManifest.title != null ? repository.LatestManifest.title : "Catflap";
+                var title = repository.LatestManifest != null && repository.LatestManifest.title != null ? repository.LatestManifest.title : "Chimera";
                 if (message != null)
                     this.Title = message;
                 else
@@ -176,7 +176,7 @@ namespace Catflap
                 if (repository.LatestManifest != null)
                 {
                     
-                    labelDLSize.ToolTip = string.Format("{0} files in {1} sync items, last updated {2}",
+                    labelDLSize.ToolTip = string.Format("{0} arquivos em {1} itens sincronizados, último update {2}",
                         repository.LatestManifest.sync.Select(f => f.count > 0 ? f.count : 1).Sum(),
                         repository.LatestManifest.sync.Count(),
                         repository.LatestManifest.sync.Select(f => f.mtime).Max().PrettyInterval()
@@ -184,7 +184,7 @@ namespace Catflap
 
                     if (repository.Status.directoriesToVerify.Any() || repository.Status.filesToVerify.Any())
                     {
-                        labelDLSize.ToolTip += "\nThe following items are outdated:";
+                        labelDLSize.ToolTip += "\nOs seguintes itens estão desatualizados:";
                         repository.Status.directoriesToVerify.ForEach(e => labelDLSize.ToolTip += "\n" + e.name);
                         repository.Status.filesToVerify.ForEach(e => labelDLSize.ToolTip += "\n" + e.name);
                     }
@@ -199,15 +199,15 @@ namespace Catflap
                     else if (repository.Status.guesstimatedBytesToVerify > 0 || repository.Status.maxBytesToVerify > 0)
                     {
                         if (repository.Status.guesstimatedBytesToVerify < 1)
-                            labelDLSize.Text = "objects need syncing";
+                            labelDLSize.Text = "objetos precisam sincronizar";
                         else
-                            labelDLSize.Text += string.Format("{0} need syncing",
+                            labelDLSize.Text += string.Format("{0} precisam sincronizar",
                                 repository.Status.guesstimatedBytesToVerify.BytesToHuman()
                             );
                     }
                     else
                     {
-                        labelDLSize.Text = repository.Status.sizeOnRemote.BytesToHuman() + " in sync";
+                        labelDLSize.Text = repository.Status.sizeOnRemote.BytesToHuman() + " sincronizados";
                     }
 
 
@@ -234,7 +234,7 @@ namespace Catflap
                 image.Source = bi;
             }
             else
-                image.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/bgimg.png"));
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/bgimg.jpg"));
 
             myBrush.ImageSource = image.Source;
             gridMainWindow.Background = myBrush;
@@ -445,19 +445,19 @@ namespace Catflap
                 {
                     // WebException wex = (WebException) err;
 
-                    MessageBox.Show("Could not retrieve repository manifest: " + err.Message +
-                                    ". Switching to offline mode.");
+                    MessageBox.Show("Não foi possível ler o manifesto online: " + err.Message +
+                                    ". Mudando para modo Offline.");
                     repository.AlwaysAssumeCurrent = true;
                     goto Retry;
                 }
                 else if (err is ValidationException)
                 {
-                    MessageBox.Show("There are problems with the repository manifest " +
-                                    "(This is probably not your fault, it needs to be fixed in the repository!):" +
+                    MessageBox.Show("Existem problemas no manifesto " +
+                                    "(Isso provavelmente não é sua culpa, já que precisa arrumar no servidor!):" +
                                     "\n\n" + err.Message);
                 }
                 else
-                    MessageBox.Show("There has been some problem downloading/parsing the repository manifest:\n\n" +
+                    MessageBox.Show("Houve algum problema em baixar e ler o manifesto:\n\n" +
                                     err.ToString());
 
                 Application.Current.Shutdown();
@@ -485,7 +485,7 @@ namespace Catflap
             /* Verify if we need to restart ourselves. */
             if (repository.RequireRestart)
             {
-                await this.ShowMessageAsync("Restart required", "The updater needs to restart.");
+                await this.ShowMessageAsync("Reinício necessário", "O chimera necessita reiniciar.");
 
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                 Application.Current.Shutdown();
@@ -493,7 +493,7 @@ namespace Catflap
 
             if (!IgnoreRepositoryLock && repository.LatestManifest.locked != "")
             {
-                await this.ShowMessageAsync("Repository locked", repository.LatestManifest.locked);
+                await this.ShowMessageAsync("Repositório travado", repository.LatestManifest.locked);
                 Application.Current.Shutdown();
             }
 
@@ -554,12 +554,12 @@ namespace Catflap
             if (wasCancel)
             {
                 SetGlobalStatus(true, "ABORTED");
-                SetUIProgressState(false, -1, "ABORTED (" + bytesOnNetwork.BytesToHuman() + " of actual network traffic)");
+                SetUIProgressState(false, -1, "ABORTADO (" + bytesOnNetwork.BytesToHuman() + " de tráfego de dados)");
             } 
             else
             {
                 SetGlobalStatus(true, "100%", 1);
-                SetUIProgressState(false, 1, "Done (" + bytesOnNetwork.BytesToHuman() + " of actual network traffic)");
+                SetUIProgressState(false, 1, "Finalizado (" + bytesOnNetwork.BytesToHuman() + " foram transferidos)");
                 Log("Verify/download complete.");
 
                 await UpdateRootManifest(!repository.Simulate);
@@ -581,7 +581,7 @@ namespace Catflap
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error executing runAction: " + ex.Message);
+                MessageBox.Show("Erro executando ação: " + ex.Message);
             }
             finally
             {
@@ -597,12 +597,12 @@ namespace Catflap
             long needed = repository.Status.guesstimatedBytesToVerify + (200 * 1024 * 1024);
             if (free < needed)
             {
-                var ret = await this.ShowMessageAsync("Disk space?",
-                        "You seem to be running out of disk space on " + rootPath + ". " +
-                        "Advanced calculations indicate you might not be able to " +
-                        "sync everything: \n\n" +
-                        free.BytesToHuman() + " free, but \n" +
-                        repository.Status.guesstimatedBytesToVerify.BytesToHuman() + " needed (plus change for temporary files).\n\n" +
+                var ret = await this.ShowMessageAsync("Espaço em disco?",
+                        "Parece que você está ficando sem espaço em " + rootPath + ". " +
+                        "Cálculos indicam que talvez você não consiga " +
+                        "sincronizar tudo: \n\n" +
+                        free.BytesToHuman() + " livres, mas \n" +
+                        repository.Status.guesstimatedBytesToVerify.BytesToHuman() + " são necessários (mais um pouco para aquivos temporários).\n\n" +
                         "Do you still want to run this sync?",
                     MessageDialogStyle.AffirmativeAndNegative);
                 if (MessageDialogResult.Negative == ret)
@@ -619,9 +619,9 @@ namespace Catflap
         {
             if (repository.Status.current)
             {
-                var ret = await this.ShowMessageAsync("Verify?", "Running a full sync will take longer, " +
-                    "since it will verify checksums.\n\n" +
-                    "This is usually not needed, except when you suspect corruption. You can cancel at any time.\n\n" +
+                var ret = await this.ShowMessageAsync("Verificar?", "Rodar uma sincronização completa irá demorar mais, " +
+                    "já que ela verificará todos arquivos.\n\n" +
+                    "Isso geralmente não é necessário, exceto quando a suspeita de arquivo corrompido. Você pode cancelar a qualquer momento.\n\n" +
                     "Are you sure this is what you want?",
                     MessageDialogStyle.AffirmativeAndNegative);
                 if (MessageDialogResult.Negative == ret)
@@ -631,7 +631,7 @@ namespace Catflap
 
             if (fullVerify && repository.Simulate)
             {
-                await this.ShowMessageAsync("Cannot simulate", "Full verify does not support simulate-mode, sorry!");
+                await this.ShowMessageAsync("Impossível simular", "Verificação completa não suporta o modo simulado, desculpe!");
                 return;
             }
 
@@ -679,8 +679,8 @@ namespace Catflap
         private void btnMakeShortcut_Click(object sender, RoutedEventArgs e)
         {
             repository.MakeDesktopShortcut();
-            this.ShowMessageAsync("Shortcut created", "A shortcut to update & run this repository was created on your Desktop.\n\n" +
-                "Feel free to rename it and/or change the icon.");
+            this.ShowMessageAsync("Atalho criado", "um atalho para sincronizar e atualizar este servidor foi criado em sua área de trabalho.\n\n" +
+                "Fique a vontade para renomear ou trocar seu ícone.");
         }
     }
 }

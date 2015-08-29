@@ -278,7 +278,7 @@ namespace Catflap
             Manifest mf = serializer.Deserialize<Manifest>(validatingReader);
 
             if (messages.Count > 0)
-                throw new ValidationException("manifest is not valid: " + string.Join("\n", messages));
+                throw new ValidationException("manifesto não é válido: " + string.Join("\n", messages));
 
             mf.Validate(RootPath);
 
@@ -424,7 +424,7 @@ namespace Catflap
                 var di = new DirectoryInfo(TmpPath).GetFiles("*", SearchOption.TopDirectoryOnly);
                 foreach (var tmpfile in di)
                 {
-                    OnDownloadMessage("<deleting leftover file from forced abort: " + tmpfile.Name + ">", true);
+                    OnDownloadMessage("<apagando restos de um cancelamento: " + tmpfile.Name + ">", true);
                     File.Delete(tmpfile.FullName);
                 }
             }

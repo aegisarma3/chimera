@@ -148,7 +148,7 @@ namespace Catflap
                     if (ct.IsCancellationRequested)
                     {
                         cancelled = true;
-                        dm.Invoke("<cancelling (patience)>", true);
+                        dm.Invoke("<cancelando (paciência!)>", true);
 
                         /* Try Ctrl+C first so we can catch --replace/partial transfers */
                         SIGTERM(p.Id);
@@ -277,7 +277,7 @@ namespace Catflap
                                 if (rateDesc == "MB/s")
                                     rate *= 1024 * 1024;
 
-                                dpc.Invoke(cancelled ? "<cancelling>" : thisFilename, percentage, bytesDone, thisFileTotalSize, (int)rate);
+                                dpc.Invoke(cancelled ? "<cancelando>" : thisFilename, percentage, bytesDone, thisFileTotalSize, (int)rate);
                             }
 
                             // new file
@@ -355,11 +355,11 @@ namespace Catflap
                 {
                     stdErr += ee.Data + "\n";
                     Console.WriteLine("STDERR: " + ee.Data);
-                    dm.Invoke("ERROR: " + ee.Data);
+                    dm.Invoke("ERRO: " + ee.Data);
                 }
             };
 
-            dm.Invoke("Verifying " + syncItem.name + " (checksumming/waiting for server)", true);
+            dm.Invoke("Verificando " + syncItem.name + " (checksumming/esperando o server)", true);
 
             pProcess.Start();
             pProcess.BeginOutputReadLine();

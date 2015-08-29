@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Catflap")]
-[assembly: AssemblyDescription("A generic updater application based on rsync.")]
+[assembly: AssemblyTitle("Chimera")]
+[assembly: AssemblyDescription("Um updater baseado em rsync.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Catflap")]
+[assembly: AssemblyProduct("Chimera")]
 [assembly: AssemblyCopyright("niv <n@e-ix.net>")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

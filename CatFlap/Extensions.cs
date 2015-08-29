@@ -92,32 +92,32 @@ namespace Catflap
                 // Less than one minute ago.
                 if (secDiff < 60)
                 {
-                    return "just now";
+                    return "agora pouco";
                 }
                 // B.
                 // Less than 2 minutes ago.
                 if (secDiff < 120)
                 {
-                    return "1 minute ago";
+                    return "1 minuto atrás";
                 }
                 // C.
                 // Less than one hour ago.
                 if (secDiff < 3600)
                 {
-                    return string.Format("{0} minutes ago",
+                    return string.Format("{0} minutos atrás",
                         Math.Floor((double)secDiff / 60));
                 }
                 // D.
                 // Less than 2 hours ago.
                 if (secDiff < 7200)
                 {
-                    return "1 hour ago";
+                    return "1 hora atrás";
                 }
                 // E.
                 // Less than one day ago.
                 if (secDiff < 86400)
                 {
-                    return string.Format("{0} hours ago",
+                    return string.Format("{0} horas atrás",
                         Math.Floor((double)secDiff / 3600));
                 }
             }
@@ -125,16 +125,16 @@ namespace Catflap
             // Handle previous days.
             if (dayDiff == 1)
             {
-                return "yesterday";
+                return "ontem";
             }
             if (dayDiff < 7)
             {
-                return string.Format("{0} days ago",
+                return string.Format("{0} dias atrás",
                 dayDiff);
             }
             if (dayDiff < 31)
             {
-                return string.Format("{0} weeks ago",
+                return string.Format("{0} semanas atrás",
                 Math.Ceiling((double)dayDiff / 7));
             }
             return null;

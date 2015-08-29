@@ -24,26 +24,26 @@ namespace Catflap
                 var fullPath = (rootPath + "/" + syncItem.name).NormalizePath();
 
                 if (fullPath.EndsWith(".catflap"))
-                    throw new ValidationException("cannot sync items into catflap directories at " + syncItem.name);
+                    throw new ValidationException("não foi possível sincronizar itens no diretório do chimera " + syncItem.name);
 
                 if (fullPath == rootPath)
-                    throw new ValidationException("cannot sync the root path directly at " + syncItem.name);
+                    throw new ValidationException("não é possível sincronizar o diretório raiz diretamente em " + syncItem.name);
 
                 if (!fullPath.StartsWith(rootPath))
-                    throw new ValidationException("would place synced item outside of root path: " + syncItem.name);
+                    throw new ValidationException("iria colocar itens sicnronizados fora da raiz: " + syncItem.name);
 
                 if (syncItem.type != "delete" && syncItem.type != "rsync")
-                    throw new ValidationException("invalid sync item type: " + syncItem.type + " for " + syncItem.name);
+                    throw new ValidationException("tipo de sincronização inválida: " + syncItem.type + " para " + syncItem.name);
             }
 
             if (!this.baseUrl.StartsWith("http://") && !this.baseUrl.StartsWith("https://"))
-                throw new ValidationException("baseUrl does not start with http(s)://");
+                throw new ValidationException("baseUrl precisa começar com http(s)://");
             if (!this.rsyncUrl.StartsWith("rsync://"))
-                throw new ValidationException("rsyncUrl does not start with rsync://");
+                throw new ValidationException("rsyncUrl não contém rsync://");
 
             if (this.version != Manifest.VERSION)
-                throw new ValidationException("Your catflap.exe is of a different version than this repository (Expected: " +
-                    this.version + ", you: " + Manifest.VERSION + "). Please make sure you're using the right version.");
+                throw new ValidationException("Seu chimera.exe é de uma versão diferente da usada neste servidor (Esperada: " +
+                    this.version + ", a sua: " + Manifest.VERSION + "). Por favor, verifique se você está com a versão correta.");
 
             if (this.ignoreCase.HasValue)
                 foreach (var syncItem in this.sync)
