@@ -1,0 +1,37 @@
+﻿<!-- Read the license the link below:
+http://creativecommons.org/licenses/by/3.0/ **
+
+Basicaly, use it anyway you want but include this
+license file in the source if your project is open
+source. Nothing is needed in the front facing project.
+Commercial use is not only allowed but encouraged.
+This pack was made to promote consistency in
+applications.
+
+
+Authors*
+- Oren Nachman
+  - appbar.chevron.down
+  - appbar.chevron.up
+  - appbar.chevron.left
+  - appbar.chevron.right
+
+Special Thanks
+- Massimo Savazzi (@msavazzi) - Excel sheet with all missing exports
+
+
+* Developers and designers that emailed Templarian
+  source .design icons to be added into the package.
+  http://templarian.com/ admin@templarian.com
+
+** Does not apply to copyrighted logos
+- Skype
+- Facebook
+- Twitter
+- Etc...
+    -->
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Canvas Width="48" Height="48" Clip="F1 M 0,0L 48,0L 48,48L 0,48L 0,0" x:Key="appbar_stop">
+        <Path Width="24" Height="24" Canvas.Left="12" Canvas.Top="12" Stretch="Fill" Fill="{DynamicResource BlackBrush}" Data="F1 M 20,12L 28,12L 36,20L 36,28L 28,36L 20,36L 12,28L 12,20L 20,12 Z M 16.7218,28.4497L 19.5502,31.2782L 24,26.8284L 28.4497,31.2782L 31.2781,28.4497L 26.8284,24L 31.2782,19.5503L 28.4497,16.7218L 24,21.1716L 19.5502,16.7218L 16.7218,19.5503L 21.1716,24L 16.7218,28.4497 Z " />
+    </Canvas>
+</ResourceDictionary>

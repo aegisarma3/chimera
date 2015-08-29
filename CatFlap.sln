@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catflap", "CatFlap\Catflap.csproj", "{AFA52DCE-2494-428A-BBA3-23683F1B86DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{04421551-C76E-4471-8F7F-FBB2EF019FCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{B725C3CD-D98F-4EAB-BA9E-EC3C714ACE9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Debug|Win32.Build.0 = Debug|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Release|Win32.ActiveCfg = Release|Any CPU
+		{AFA52DCE-2494-428A-BBA3-23683F1B86DE}.Release|Win32.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
