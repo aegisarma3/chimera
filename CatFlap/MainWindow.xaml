@@ -19,12 +19,12 @@
 
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <Controls:Flyout Header="Log" Position="Right" Width="400" x:Name="logFlyout" Opacity="0.9" >
+            <Controls:Flyout Header="Log" Position="Right" Width="400" x:Name="logFlyout" Opacity="0.9" Visibility="Hidden" >
                 <Grid Margin="0,0,0,0">
                     <TextBox x:Name="logTextBox" Height="356" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Margin="0,0,0,50" IsReadOnly="True" VerticalScrollBarVisibility="Visible" FontSize="9"/>
-                    <Button x:Name="btnVerify" Content="verify" Click="btnVerify_Click" VerticalAlignment="Bottom"  HorizontalAlignment="Left" Margin="10" Height="18" />
-                    <Button x:Name="btnOpenInExplorer" Content="open folder" Click="btnOpenFolder_Click" VerticalAlignment="Bottom"  HorizontalAlignment="Left" Margin="60,10,10,10" Height="18" />
-                    <Button x:Name="btnMakeShortcut" Content="create desktop shortcut" Click="btnMakeShortcut_Click" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="10" Height="18" />
+                    <Button x:Name="btnVerify" Content="Verificar" Click="btnVerify_Click" VerticalAlignment="Bottom"  HorizontalAlignment="Left" Margin="10" Height="18" />
+                    <Button x:Name="btnOpenInExplorer" Content="Abrir pasta" Click="btnOpenFolder_Click" VerticalAlignment="Bottom"  HorizontalAlignment="Left" Margin="80,10,10,10" Height="18" />
+                    <Button x:Name="btnMakeShortcut" Content="Criar atalho na desktop" Click="btnMakeShortcut_Click" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="10" Height="18" />
                 </Grid>
             </Controls:Flyout>
         </Controls:FlyoutsControl>
@@ -32,8 +32,8 @@
 
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button x:Name="btnHelp" Content="?" Click="btnHelp_Click" ToolTip="Catflap website." />
-            <Button x:Name="btnShowHideLog" Content="more" Click="btnShowHideLog_Click" />
+            
+            <Button x:Name="btnShowHideLog" Content="preferências" Click="btnShowHideLog_Click" />
 
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
@@ -54,11 +54,10 @@
         </Button>
 
 
-        <TextBlock x:Name="labelDownloadStatus" Margin="0,0,0,50" Text="{}{0} - {1}% de {2} a {3}/s" Padding="5,0" Panel.ZIndex="100" FontSize="10" Grid.ColumnSpan="2" TextAlignment="Center" Grid.Row="1" Height="17" VerticalAlignment="Bottom" >
+        <TextBlock x:Name="labelDownloadStatus" Margin="0,0,0,50" Text="{}{0} - {1}% de {2} a {3}/s" Padding="5,0" Panel.ZIndex="100" FontSize="10" Grid.ColumnSpan="2" TextAlignment="Center" Grid.Row="1" Height="17" VerticalAlignment="Bottom" FontWeight="Bold" >
         </TextBlock>
         <!--<ProgressBar x:Name="globalProgress" Height="3" BorderBrush="Black" Grid.ColumnSpan="2" BorderThickness="0" VerticalAlignment="Top" Background="#FF898989" />-->
-        <TextBlock x:Name="labelDLSize" Text="(para verificar)" Margin="10,0,10,64" VerticalAlignment="Bottom" RenderTransformOrigin="0.868,0.192" Height="30" TextAlignment="Center" Grid.ColumnSpan="2" FontSize="20" FontFamily="Segoe UI Light" Grid.Row="1">
-        </TextBlock>
+        <TextBlock x:Name="labelDLSize" Text="(para verificar)" Margin="10,0,10,64" VerticalAlignment="Bottom" RenderTransformOrigin="0.868,0.192" Height="30" TextAlignment="Center" Grid.ColumnSpan="2" FontSize="20" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
         <Button x:Name="btnCancel" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="91,0,0,4" Width="50" Click="btnCancel_Click" Panel.ZIndex="2" Height="50" VerticalAlignment="Bottom" BorderThickness="0" Background="White" Grid.Row="1">
             <Rectangle Width="20" Height="20">
                 <Rectangle.Fill>

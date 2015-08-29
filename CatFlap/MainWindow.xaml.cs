@@ -201,7 +201,7 @@ namespace Catflap
                         if (repository.Status.guesstimatedBytesToVerify < 1)
                             labelDLSize.Text = "objetos precisam sincronizar";
                         else
-                            labelDLSize.Text += string.Format("{0} precisam sincronizar",
+                            labelDLSize.Text += string.Format("{0} precisam de sincronização",
                                 repository.Status.guesstimatedBytesToVerify.BytesToHuman()
                             );
                     }
@@ -294,7 +294,7 @@ namespace Catflap
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string major = String.Join(".", fvi.FileVersion.Split('.').Take(3));
             string point = String.Join(".", fvi.FileVersion.Split('.').Skip(3));
-            btnHelp.Content = major + (point == "0" ? "" : "." + point);
+            
 
             foreach (string src in resourcesToPurge)
             {
@@ -622,7 +622,7 @@ namespace Catflap
                 var ret = await this.ShowMessageAsync("Verificar?", "Rodar uma sincronização completa irá demorar mais, " +
                     "já que ela verificará todos arquivos.\n\n" +
                     "Isso geralmente não é necessário, exceto quando a suspeita de arquivo corrompido. Você pode cancelar a qualquer momento.\n\n" +
-                    "Are you sure this is what you want?",
+                    "Você tem certeza que é isso o que quer?",
                     MessageDialogStyle.AffirmativeAndNegative);
                 if (MessageDialogResult.Negative == ret)
                     return;

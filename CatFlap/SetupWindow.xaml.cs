@@ -118,11 +118,11 @@ namespace Catflap
                 var diff = mf.warnWhenSetupWithoutFiles.Select(x => new FileInfo(x).Name.ToLowerInvariant()).Except(currentContents);
                 if (diff.Count() > 0)
                 {
-                    var setupAnyways = await this.ShowMessageAsync("Expected files missing?",
-                        "This manifest claims it needs to be run in a directory containing certain " +
-                        "files, but we're missing the following:\n\n" +
+                    var setupAnyways = await this.ShowMessageAsync("Arquivos não encontrados?",
+                        "Este manifesto precisa rodar em um diretório que contém alguns " +
+                        "arquivos, mas você não possuí os seguintes:\n\n" +
                         string.Join(", ", diff) + "\n\n" +
-                        "Do you want to continue anyways?", MessageDialogStyle.AffirmativeAndNegative);
+                        "Ques continuar mesmo assim?", MessageDialogStyle.AffirmativeAndNegative);
 
                     if (MessageDialogResult.Negative == setupAnyways)
                         return false;
@@ -147,11 +147,11 @@ namespace Catflap
                 if (untracked.Count() > 0)
                 {
                     var ret = MessageBox.Show(
-                        "THIS REPOSITORY RECOMMENDS TO START IN A EMPTY DIRECTORY.\n\n" +
-                        "You are setting up in a directory that already contains data that is not tracked by this repository:\n\n" +
+                        "ESTE REPOSITÓRIO RECOMANDA INICIAR EM UM DIRETÓRIO VAZIO.\n\n" +
+                        "Você está configurando um repositório que já contém alguns arquivos:\n\n" +
                         String.Join("\n", untracked.Take(10)) + "\n..\n\n" +
-                        "Do you want to continue anyways?",
-                        "Untracked files in directory, continue anyways?", MessageBoxButton.YesNo);
+                        "Que continuar mesmo assim?",
+                        "Arquivos não rastreados no diretório, continuar?", MessageBoxButton.YesNo);
                     if (ret == MessageBoxResult.No)
                         return false;
                 }
@@ -161,9 +161,9 @@ namespace Catflap
 
             System.IO.File.WriteAllText(appPath + "\\catflap.json", JsonConvert.SerializeObject(mf));
 
-            var wantShortcut = await this.ShowMessageAsync("Create desktop shortcut?",
-                "Do you want me to create a desktop shortcut for you?\n" +
-                "I will only ask once. You can this yourself later by clicking 'more' in the title bar.",
+            var wantShortcut = await this.ShowMessageAsync("Criar um atalho na desktop?",
+                "Você gostaria de criar um atalho na desktop?\n" +
+                "Isso será perguntado somente uma vez. Futuramente, utilize o menu 'preferências'.",
                 MessageDialogStyle.AffirmativeAndNegative);
 
             if (MessageDialogResult.Affirmative == wantShortcut)

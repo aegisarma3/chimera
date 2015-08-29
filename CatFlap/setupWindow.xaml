@@ -6,7 +6,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         ShowTitleBar="true"
         Loaded="OnWindowLoaded"
-        Title="Setup do Chimera Server" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Margin="1" BorderBrush="Gray" BorderThickness="0" WindowTransitionsEnabled="False">
+        Title="Setup do Chimera Server" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Margin="1" BorderBrush="Gray" BorderThickness="0" WindowTransitionsEnabled="False" ShowIconOnTitleBar="True">
 
     <i:Interaction.Behaviors>
         <behaviours:BorderlessWindowBehavior EnableDWMDropShadow="True" />
